@@ -1,0 +1,39 @@
+*{margin:0px;padding:0px;}
+.nav1{
+  display: block;
+  float: left;
+  width: 100%; 
+  border-right: 1px solid  #f3f3f3;
+  background: #33B5E5;
+
+}
+.nav1 .menu{
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0px 15px;
+  border-left: 1px solid #4dc4f0;
+  border-right: 1px solid #1da0d0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  height: 42px;
+  line-height: 42px;
+  vertical-align: middle;
+}
+.nav1 .selected{
+	  background: #16a0d3;
+}
+.nav1 .menu:hover{
+	background: #4dc4f0;
+}
+.nav1 .person{
+	float: right;
+	margin-right: 80px;
+}
+.manage{
+	height: 800px;
+	background: #f3f3f3;
+  margin-left:-22px;
+}
+

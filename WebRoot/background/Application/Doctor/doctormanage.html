@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统-首页</title>
+	<link rel="stylesheet" type="text/css" href="../../Public/Static/zui/dist/css/zui.css">
+ <link rel="stylesheet" type="text/css" href="../../Public/Static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../Public/Common/header.css">
+  <link rel="stylesheet" href="../../Public/Static/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="../../Public/Home/home.css">
+
+</head>
+ <body >
+ <!--导航条-->
+  <nav class="nav1">
+      <ul style="padding-left: 0px;">
+        <li class="menu col-sm-2"><p style="color:#222; font-size:26px; left:0;"><span class="icon-h-sigh" style="font-size:26px;"></span>医院管理系统</p></li>
+        <li class="selected menu"><span class="glyphicon glyphicon-th-large"></span>&nbsp;首页</li>
+        <li class="menu"><span class="icon-accessibility"></span>&nbsp;病人登记</li>
+        <li class="menu"><span class=" glyphicon glyphicon-home"></span>&nbsp;病房管理</li>
+        <li class="menu"><span class=" icon-stethoscope"></span>&nbsp;医生管理</li>
+        <li class="menu"><span class="icon-child"></span>&nbsp;护士管理</li>
+        <li class="menu"> <span class="glyphicon glyphicon-th"></span>&nbsp;医嘱单管理</li>
+        <li class="menu"><span class="icon-users"></span>&nbsp;管理员管理</li>
+        <li class="menu person">
+          <div class="dropdown">
+              <span class="glyphicon glyphicon-user"></span>  demo 
+              <span class="caret"></span>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">退出</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">修改密码</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        <!-- <span class="glyphicon glyphicon-user"></span> demo --></li>
+      </ul>
+  </nav>
+
+  <nav class="menu" data-toggle="menu" style="width: 200px;margin-top: 20px;float:left; margin-left: 10px;">
+  <button class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> 登记病人</button>
+  <button class="btn"><i class="icon-cloud-upload"></i> UPLOAD</button>
+  <ul class="nav nav-primary">
+    <li><a href="#"><span class="glyphicon glyphicon-th-large"></span>&nbsp;首页</a></li>
+       <li >
+          <a href="#"><span class="icon-accessibility"></span>&nbsp;住院人管理 <span class="glyphicon glyphicon-menu-down" style="margin-left: 40px;"></span></a>
+           <ul class="nav">
+            <li><a href="#">住院人登记表管理</a></li>
+            <li><a href="#">住院人出院办理</a></li>
+          </ul>
+        </li>
+        <li ><a href="#"><span class=" glyphicon glyphicon-home"></span>&nbsp;病房管理</a></li>
+        <li ><a href="#"><span class=" icon-stethoscope"></span>&nbsp;医生管理</a></li>
+        <li ><a href="#"><span class="icon-child"></span>&nbsp;护士管理</a></li>
+        <li ><a href="#"> <span class="glyphicon glyphicon-th"></span>&nbsp;医嘱单管理</a></li>
+        <li ><a href="#"><span class="icon-users"></span>&nbsp;管理员管理</a></li>
+  </ul>
+</nav>
+
+
+  <!--内容-->
+  <div id="main">
+    <article>
+    <section id="buttons" class="page-section " >
+      <h1 class="header-dividing">住院人登记表管理</h1>
+    
+      <p>根据编号查询住院人</p>
+  
+    </section>
+      <section  >
+
+      <div class="container">
+    <div class="row">
+        <div class="col-md-10">
+
+
+            <table class="table table-hover" id="bootstrap-table">
+                <thead>
+                <tr>
+                    <th>#ID</th>
+                
+                    <th>住院编号</th>
+                    <th>姓名</th>
+                    <th>住院时间</th>
+                    <th>出院时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>200</td>
+                    <td>janedoe</td>
+        
+                    <td>Doe</td>
+                      <td>02/04/2012</td>
+            <td>02/04/2012</td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span>修改</button>
+                <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>删除</button>
+              </div>
+            </td> 
+
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>zanedoe</td>
+                    <td>Jane</td>
+                    <td>Moe</td>
+                </tr>
+                <tr>
+                    <td>300</td>
+                    <td>aanedoe</td>
+                    <td>Lane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>canedoe</td>
+                    <td>Jane</td>
+                    <td>Boe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>210</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>310</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>410</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>510</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>610</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>710</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>810</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>910</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>110</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>130</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>140</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>150</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>160</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>170</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>180</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>190</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    </section>
+ 
+  </article>
+
+  </div>
+	<!--js样式文件-->
+	<script type="text/javascript" src="../../Public/Static/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../../Public/Static/zui/dist/js/zui.js"></script>
+  <script type="text/javascript" src="../../Public/Common/header.js"></script>
+  <script type="text/javascript" src="../../Public/Common/js/vendor/jquery.sortelements.js"></script>
+  <script type="text/javascript" src="../../Public/Common/js/jquery.bdt.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#bootstrap-table').bdt();
+    });
+</script>
+
+</body>
+</html>

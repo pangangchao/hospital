@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+  xmlns="http://www.springframework.org/schema/beans"    
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:cache="http://www.springframework.org/schema/cache"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+  http://www.springframework.org/schema/cache/spring-cache.xsd 
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context.xsd 
+  http://www.springframework.org/schema/aop 
+  http://www.springframework.org/schema/aop/spring-aop.xsd
+  http://www.springframework.org/schema/tx
+  http://www.springframework.org/schema/tx/spring-tx.xsd
+  http://www.springframework.org/schema/cache
+  http://www.springframework.org/schema/cache/spring-cache.xsd 
+  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+   ">
+  
+  <context:annotation-config />
+  <!-- 自动扫描dao和service包(自动注入) -->
+  <context:component-scan base-package="com.web"></context:component-scan>
+  
+  
+
+  
+  <!-- 分散配置 -->
+  <context:property-placeholder location="classpath:config/dbcp.properties"/>
+  <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"  destroy-method="close"> 
+
+    <property name="driverClass" value="${jdbc.driverClassName}"/>
+    <property name="jdbcUrl" value="${jdbc.url}"/>
+    <property name="user" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+    <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+    <property name="acquireIncrement" value="${acquireIncrement}"/>
+    <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+    <property name="acquireRetryAttempts" value="${acquireRetryAttempts}"/>
+    <!--两次连接中间隔时间，单位毫秒。Default: 1000 -->
+    <property name="acquireRetryDelay" value="${acquireRetryDelay}"/>
+    <!--连接关闭时默认将所有未提交的操作回滚。Default: false -->
+    <property name="autoCommitOnClose" value="${autoCommitOnClose}"/>
+    <!--连接池中保留的最小连接数。-->
+    <property name="minPoolSize" value="${minPoolSize}" />
+    <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+    <property name="idleConnectionTestPeriod" value="${idleConnectionTestPeriod}"/>
+    <!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+    <property name="initialPoolSize" value="${initialPoolSize}"/>
+    <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+    <property name="maxIdleTime" value="${maxIdleTime}"/>
+    <!--连接池中保留的最大连接数。Default: 15 -->
+    <property name="maxPoolSize" value="${maxPoolSize}"/>
+    <!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+    　　属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+    　　如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+    <property name="maxStatements" value="${maxStatements}"/>
+    <!--c3p0是异步操作的，缓慢的JDBC操作通过帮助进程完成。扩展这些操作可以有效的提升性能
+    　　通过多线程实现多个操作同时被执行。Default: 3-->
+    <property name="numHelperThreads" value="${numHelperThreads}"/>
+  </bean>
+
+  
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+  p:dataSource-ref="dataSource">
+  <property name="hibernateProperties">
+    <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+        <prop key="hibernate.hbm2ddl.auto">update</prop>
+        <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.query.substitutions">true 1, false 0, yes 'Y', no 'N'</prop>
+        <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>      
+
+    </props>
+  </property>
+  <property name="packagesToScan">
+    <list>
+      <value>com.web.hospitalsystem.entity</value>
+    </list>
+  </property>
+  </bean>
+  
+  <!-- 配置HibernateTemplate Bean -->
+  
+  <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" >
+    <property name="dataSource" ref="dataSource"></property>
+  </bean>
+  
+  <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+  p:sessionFactory-ref="sessionFactory"/>
+  
+  <tx:annotation-driven transaction-manager="transactionManager"/>
+  <tx:advice id="txAdvice">
+     <tx:attributes>  
+         <!-- 指定哪些方法需要加入事务，这里懒惰一下全部加入，可以使用通配符来只加入需要的方法 -->  
+              <tx:method name="add*" propagation="REQUIRED" />  <!-- 根据每个（类）方法配置事务的传播特性 -->
+              <tx:method name="modify*" propagation="REQUIRED" />  
+              <tx:method name="delete*" propagation="REQUIRED" />  
+              <tx:method name="get*" propagation="REQUIRED" read-only="true"/>  
+              <tx:method name="query*" propagation="REQUIRED" read-only="true"/>  
+              <tx:method name="*" propagation="REQUIRED" />  
+          </tx:attributes>  
+  </tx:advice>
+  
+      <!-- 需要引入aop的命名空间（配置事物的切入点） -->  
+    <aop:config>  
+        <!-- 切入点指明了在执行Service的所有方法时产生事务拦截操作 -->  
+        <aop:pointcut id="serviceMethods" expression="execution(* com.web.common.base.service.*.*(..))" />      
+       <!-- 定义了将采用何种拦截操作，这里引用到 txAdvice -->  
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />  
+    </aop:config> 
+</beans>
+

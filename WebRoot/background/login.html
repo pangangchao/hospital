@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>住院管理系统</title>
+	<link rel="stylesheet" href="Public/Static/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="Public/Login/login.css">
+	<link rel="stylesheet" href="Public/Static/css/ihover.min.css">
+</head>
+<body>
+
+	<div class="row">
+  	<div class="col-sm-2 pic" >
+	    <!-- normal -->
+	    <div class="ih-item circle effect1"><a href="#">
+	        <div class="spinner"></div>
+	        <div class="img"><img src="Public/Static/image/hospital-logo.jpg" alt="img"></div>
+	        <div class="info">
+	          <div class="info-back">
+	            <h3>吉首大学住院管理系统</h3>
+	            <p>您还没有登录，请登录</p>
+	          </div>
+	        </div></a>
+	    </div>
+ 		</div>
+ 		<div class="triangle"></div>
+ 		<div class="col-sm-4 panel panel-default login ">
+ 			<div class="panel-body">
+			<div class="title col-md-10">
+				<h3 >系统管理登录</h3>
+			</div>
+			<form >
+				<div class="form-group col-md-12">
+					<label for="" class="glyphicon glyphicon-user username-ico" ></label>
+					<input type="text" name="username" class="form-control "  style="height:40px;" placeholder="请输入工作号">
+					<span class="ckname"></span>
+				</div>
+				<div class="form-group col-md-12">
+					<label for="" class="glyphicon glyphicon-lock password-ico"></label>
+					<input type="password" name="password" class="form-control "  style="height:40px;"  placeholder="密码">
+					<span class="ckpwd"></span>
+				</div>
+
+				<div class="form-group col-md-12" style="margin-top:20px;">
+					<a  class="login-btn" >登录</a>
+				</div>
+			</form>
+				<div class="form-group col-md-12">
+					<p style="color:#666; text-align:center"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;请输入工作号和密码</p>
+				</div>
+		</div>
+	</div>
+ 		</div>
+
+  </div>
+
+       <section id="ajax_result">
+      <div class="modal fade" id="result">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body re_content">
+        				 登陆失败，账号或密码错误
+            </div>
+           <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div> 
+    </div>
+    </section>
+
+	<script type="text/javascript" src="Public/Static/jquery/jquery.js"></script>
+	<script src="Public/Static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="Public/Login/login.js"></script>
+	<script type="text/javascript" >
+		$(document).ready(function(){
+						
+			});
+
+			
+		});
+	</script>  
+</body>
+</html>

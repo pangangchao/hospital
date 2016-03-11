@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统-首页</title>
+	<link rel="stylesheet" type="text/css" href="../../Public/Static/zui/dist/css/zui.css">
+ <link rel="stylesheet" type="text/css" href="../../Public/Static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../Public/Common/header.css">
+  <link rel="stylesheet" href="../../Public/Static/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="../../Public/Home/home.css">
+</head>
+ <body >
+ <!--导航条-->
+  <nav class="nav1">
+      <ul style="padding-left: 0px;">
+        <li class="menu col-sm-2"><p style="color:#222; font-size:26px; left:0;"><span class="icon-h-sigh" style="font-size:26px;"></span>医院管理系统</p></li>
+        <li class="selected menu"><span class="glyphicon glyphicon-th-large"></span>&nbsp;首页</li>
+        <li class="menu"><span class="icon-accessibility"></span>&nbsp;病人登记</li>
+        <li class="menu"><span class=" glyphicon glyphicon-home"></span>&nbsp;病房管理</li>
+        <li class="menu"><span class=" icon-stethoscope"></span>&nbsp;医生管理</li>
+        <li class="menu"><span class="icon-child"></span>&nbsp;护士管理</li>
+        <li class="menu"> <span class="glyphicon glyphicon-th"></span>&nbsp;医嘱单管理</li>
+        <li class="menu"><span class="icon-users"></span>&nbsp;管理员管理</li>
+        <li class="menu person">
+          <div class="dropdown">
+              <span class="glyphicon glyphicon-user"></span>  demo 
+              <span class="caret"></span>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">退出</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">修改密码</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        <!-- <span class="glyphicon glyphicon-user"></span> demo --></li>
+      </ul>
+  </nav>
+
+  <nav class="menu" data-toggle="menu" style="width: 200px;margin-top: 20px;float:left; margin-left: 10px;">
+  <button class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> 登记病人</button>
+  <button class="btn"><i class="icon-cloud-upload"></i> UPLOAD</button>
+  <ul class="nav nav-primary">
+    <li><a href="#"><span class="glyphicon glyphicon-th-large"></span>&nbsp;首页</a></li>
+       <li >
+          <a href="#"><span class="icon-accessibility"></span>&nbsp;住院人管理 <span class="glyphicon glyphicon-menu-down" style="margin-left: 40px;"></span></a>
+           <ul class="nav">
+            <li><a href="#">住院人登记表管理</a></li>
+            <li><a href="#">住院人出院办理</a></li>
+          </ul>
+        </li>
+        <li ><a href="#"><span class=" glyphicon glyphicon-home"></span>&nbsp;病房管理</a></li>
+        <li ><a href="#"><span class=" icon-stethoscope"></span>&nbsp;医生管理</a></li>
+        <li ><a href="#"><span class="icon-child"></span>&nbsp;护士管理</a></li>
+        <li ><a href="#"> <span class="glyphicon glyphicon-th"></span>&nbsp;医嘱单管理</a></li>
+        <li ><a href="#"><span class="icon-users"></span>&nbsp;管理员管理</a></li>
+  </ul>
+</nav>
+  <!--内容-->
+  <div id="main">
+
+    <article>
+    <section id='form' class="page-section">
+      <div class="page-header"><h1>医生登记表单</h1></div>
+      <h3>信息</h3>
+      <h4>基本信息填写</h4>
+      <div class='panel'>
+        <div class='panel-heading'>创建</div>
+        <div class='panel-body'>
+
+        <form class="form-horizontal" role="form" method='post'>
+          <div class="form-group">
+            <label class="col-md-2 control-label">姓名</label>
+            <div class="col-md-6">
+               <input type='text' name='patient-name' id='patient-name' placeholder=请输入姓名 class='form-control' />
+            </div>
+          </div>
+          
+				   <div class="form-group">
+            <label class="col-md-2 control-label">年龄</label>
+            <div class="col-md-6 ">
+               <input type='text' name='age' id='title' value='' class='form-control' placeholder=''/>
+    
+            </div>
+
+          </div>
+  		<div class="form-group">
+  			<label for="" class="col-md-2 control-label">性别</label>
+  			<div class="col-md-6">
+				  <label class="radio-inline">
+					  <input type="radio" name="sex" id="inlineRadio2" value="option2"> 男
+				
+				 </label>
+				   <label class="radio-inline">
+					  <input type="radio" name="sex" id="inlineRadio2" value="option2"> 女
+				 </label>
+  			</div>	
+  		</div>	
+	  	 <div class="form-group">
+	            <label class="col-md-2 control-label">身份证号</label>
+	            <div class="col-md-6 has-error">
+	               <input type='text' name='age' id='title' value='' class='form-control' placeholder=''/>
+	   
+	            </div>
+	         </div>
+  	
+
+          <div class="form-group">
+            <label class="col-md-2 control-label">地址</label>
+            <div class="col-md-10 ">
+               <input type='text' name='title' id='title' value='' class='form-control' placeholder=''/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2 control-label">职业</label>
+            <div class="col-md-10 ">
+               <input type='text' name='title' id='title' value='' class='form-control' placeholder=''/>
+            </div>
+          </div>
+
+         <div class="form-group">
+            <label class="col-md-2 control-label">所属科室</label>
+            <div class='col-md-4'>
+              <select name='original' id='original' class='form-control'>
+          
+                <option value="1" selected='selected'>内科</option>
+                <option value="2">外科</option>
+                <option value="3">儿科</option>
+                <option value="4">妇科</option>
+                <option value="5">眼科</option>
+                <option value="6">耳鼻喉科</option>
+                <option value="7">口腔科</option>
+                <option value="8">皮肤科</option>
+                <option value="9">中医科</option>
+                <option value="10">针灸推拿科</option>
+                <option value="11">心理咨询室</option>
+                <option value="12">呼吸内科</option>
+                <option value="13">消化内科</option>
+                <option value="14">泌尿内科</option>
+                <option value="15">心内科</option>
+                <option value="16">血液科</option>
+                <option value="17">内分泌科</option>
+                <option value="18">神经内科</option>
+                <option value="19">小儿科</option>
+                <option value="20">感染科</option>
+                <option value="21">普外科</option>
+                <option value="22">骨科</option>
+                <option value="23">血透室</option>
+                <option value="24">产科</option>
+                <option value="25">妇科</option>
+                <option value="26">神经外科</option>
+                <option value="27">肝胆外科</option>
+                <option value="28">泌尿外科</option>
+                <option value="29">烧伤科</option>
+        
+              </select>
+            </div>
+           </div>
+
+
+
+
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+               <input type='submit' id='submit' class='btn btn-primary' value='保存' data-loading='稍候...' /> <input type='hidden' name='type' id='type' value='article'  />
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      <table class="table-form">
+        <tr>
+          <th></th>
+          <td></td>
+        </tr>
+      </table>
+    </section>
+  </article>
+  </div>
+	<!--js样式文件-->
+	<script type="text/javascript" src="../../Public/Static/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../../Public/Static/zui/dist/js/zui.js"></script>
+  <script type="text/javascript" src="../../Public/Common/header.js"></script>
+</body>
+</html>

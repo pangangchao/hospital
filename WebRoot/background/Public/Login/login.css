@@ -1,0 +1,21 @@
+body{	background:#33B5E5;}
+.pic{margin-left:20%;margin-top: 100px; }
+.login { margin-left:5%;margin-top: 100px; background: #ECEFF1}
+.login .title{border-bottom: 1px solid  #DFDFDF; margin-left: 4%; margin-bottom: 20px;}
+.login .username-ico,.password-ico{  top: 31px;  margin-left: 93%; cursor:pointer; color: #666} 
+.login .login-btn{display: block;margin: 0;padding: 10px 0;width: 100%;color: #fff;border: 2px solid #ECEFF1;
+	  border-radius: 6px 6px 6px 6px;
+	  background: #33B5E5;
+	  font-size: 16.5px;
+	  text-decoration: none;
+	  cursor: pointer;
+	  text-align: center;
+}
+.need{
+	background: url('../Static/image/skin_icons.png') 278px -129px no-repeat;
+}
+
+.triangle{    position:relative;}
+.triangle:after,.triangle:before{content:'';display:block;position:absolute;border-width:20px;border-style:solid;}
+.triangle:before{border-color:transparent transparent transparent transparent;}
+.triangle:after{border-color:transparent  #ECEFF1  transparent  transparent ;  left: 38%;margin-left: 1.2%;top:170px}
